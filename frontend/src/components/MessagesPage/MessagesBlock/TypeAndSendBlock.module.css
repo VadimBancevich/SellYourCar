@@ -1,0 +1,15 @@
+.textarea {
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+    height: 100px;
+}
+
+.block {
+    margin: 0 10px 5px;
+}
+
+.sendButton {
+    display: flex;
+    justify-content: flex-end;
+}

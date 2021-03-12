@@ -1,0 +1,32 @@
+.scrollBar {
+
+}
+
+.scrollBar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.scrollBar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.absCenter {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,5 @@
+.carsBlock {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 320px));
+    justify-content: center;
+}

@@ -1,0 +1,69 @@
+.chat {
+    display: flex;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.23);
+    transition: background-color 0.4s;
+    padding: 8px 0;
+}
+
+.chat:hover {
+    background-color: lightgray;
+}
+
+.chatSelected {
+    background-color: rgba(0, 0, 0, 0.06);
+    box-shadow: inset 0 0 9px -5px;
+}
+
+.chatHasUnread {
+}
+
+.chatImage {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.chatName {
+    white-space: nowrap;
+    margin-bottom: 4px;
+}
+
+.chatInfo {
+    overflow: hidden;
+    width: 100%;
+}
+
+.chatLastMessagesBlock {
+    display: flex;
+}
+
+.chatMessage {
+    width: 100%;
+    overflow: hidden;
+    /*border: 1px solid;*/
+}
+
+.unreadCount {
+    margin: auto 5px;
+    padding: 6px;
+    background: #3d5afe;
+    box-shadow: 0 0 3px 0 black;
+    color: white;
+    border-radius: 50%;
+    font-size: 11px;
+}
+
+.senderName {
+    text-transform: capitalize;
+    font-weight: 650;
+    font-size: 12px;
+    font-family: serif;
+}
+
+.hiddenText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: serif;
+}

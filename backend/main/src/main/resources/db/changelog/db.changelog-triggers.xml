@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet id="triggers1" author="Vadim">
+        <sql endDelimiter="/">CREATE TRIGGER `message_AFTER_INSERT` AFTER INSERT ON `message` FOR EACH ROW BEGIN
+            update chat_user cu set cu.unread_count = cu.unread_count + 1
+            where cu.chat_id = NEW.chat_id and cu.user_id = NEW.to_user_id;
+            update chat c set c.last_message_id = NEW.id where c.id = NEW.chat_Id;
+            END/
+        </sql>
+    </changeSet>
+    <changeSet id="triggers2" author="Vadim">
+        <sql endDelimiter="/">CREATE TRIGGER `message_AFTER_UPDATE` AFTER UPDATE ON `message` FOR EACH ROW BEGIN
+            if NEW.is_read = true and OLD.is_read = false then
+            update chat_user cu set cu.unread_count = cu.unread_count - 1 where cu.chat_id = NEW.chat_id and cu.user_id
+            = NEW.to_user_id;
+            end if;
+            END/
+        </sql>
+    </changeSet>
+</databaseChangeLog>

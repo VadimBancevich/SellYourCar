@@ -1,0 +1,22 @@
+.engineVolumeBlock {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.engineVolumeBlock  label {
+    margin-bottom: 8px;
+}
+
+.buttonsBlock {
+    display: flex;
+    width: 13em;
+    justify-content: space-between;
+}
+
+.buttonsBlock > span > button {
+    width: 7em;
+}
+.buttonsBlock > span:first-child {
+    margin-right: 8px;
+}
+

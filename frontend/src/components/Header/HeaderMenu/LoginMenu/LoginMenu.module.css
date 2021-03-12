@@ -1,0 +1,26 @@
+.loginBlock {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.loginForm > div {
+    margin-bottom: 10px;
+}
+
+.loginForm > button {
+    margin-bottom: 10px;
+}
+
+.errorText {
+    color: red;
+    width: 12em;
+    text-align: center;
+}

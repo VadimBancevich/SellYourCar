@@ -1,0 +1,40 @@
+.item {
+    display: flex;
+    padding: 0 15px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.item:hover {
+    box-shadow: 2px 1px 0px 8px lightgrey;
+}
+
+.card {
+    width: 300px;
+    text-align: center;
+    margin: 10px;
+}
+
+.image {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto
+}
+
+.cardHeader span {
+    font-size: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+.cardHeader > div {
+    width: 100%;
+}
+
+.cardMedia {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+}

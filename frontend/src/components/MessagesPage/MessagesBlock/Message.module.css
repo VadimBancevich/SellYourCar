@@ -1,0 +1,45 @@
+.message {
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 0 rgb(132 132 132);
+}
+
+.messageContainer {
+    margin: 1px 0;
+}
+
+.toMeMessage {
+    background-color: #d3d3d3;
+    margin: 4px;
+}
+
+.fromMeMessage {
+    margin: 4px 4px 4px auto;
+    background: #4dabf599;
+}
+
+.unreadMessage {
+    background-color: #dcdcdc75;
+}
+
+.senderName {
+    text-transform: capitalize;
+    font-weight: 650;
+    font-size: 12px;
+    padding: 2px 0 0 10px;
+    font-family: serif;
+}
+
+.content {
+    overflow-wrap: break-word;
+    font-size: 16px;
+    padding: 0 10px;
+    font-family: serif;
+}
+
+.dateTime {
+    font-size: 10px;
+    text-align: end;
+    padding-right: 5px;
+    font-style: italic;
+}

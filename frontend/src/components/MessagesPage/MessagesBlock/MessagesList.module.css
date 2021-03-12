@@ -1,0 +1,16 @@
+.messagesListBlock {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.chatStart {
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    font-size: 12px;
+    background-color: #94cdf929;
+    border: 1px solid #94cdf9;
+    margin: 3px auto 0;
+}

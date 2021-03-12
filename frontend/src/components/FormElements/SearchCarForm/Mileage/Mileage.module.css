@@ -1,0 +1,8 @@
+.mileageBlock{
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.mileageBlock > div:first-child {
+    padding-right: 1em;
+}

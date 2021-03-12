@@ -1,0 +1,16 @@
+.registrationBlock {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registrationForm {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.registrationForm > * {
+    margin-bottom: 8px!important;
+}

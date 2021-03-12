@@ -1,0 +1,314 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.0.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+    <changeSet author="Vadim (generated)" id="1615541973278-1">
+        <createTable tableName="brand">
+            <column autoIncrement="true" name="id" type="INT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="brand_name" type="VARCHAR(45)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-2">
+        <createTable tableName="car">
+            <column autoIncrement="true" name="id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="year" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="car_condition" type="ENUM('new', 'used', 'crash')">
+                <constraints nullable="false"/>
+            </column>
+            <column name="mileage" type="MEDIUMINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transmission" type="ENUM('auto', 'manual')">
+                <constraints nullable="false"/>
+            </column>
+            <column name="drivetrain" type="ENUM('fwd', 'rwd', 'awd')">
+                <constraints nullable="false"/>
+            </column>
+            <column name="body_type" type="ENUM('sedan', 'hatchback', 'roadster', 'suv', 'wagon', 'coupe', 'minivan', 'van', 'pickup', 'limousine', 'convertible')">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vin" type="VARCHAR(45)"/>
+            <column name="engine" type="ENUM('gasoline', 'diesel', 'hybrid', 'electric')">
+                <constraints nullable="false"/>
+            </column>
+            <column name="engine_volume" type="SMALLINT UNSIGNED"/>
+            <column name="gas" type="ENUM('propane', 'methane')"/>
+            <column name="brand_id" type="INT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="model_id" type="INT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="generation_id" type="INT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="creating_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="upping_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone" type="VARCHAR(20)"/>
+            <column name="seller_name" type="VARCHAR(45)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="user_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="images" type="JSON">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="not_active" name="status" type="ENUM('active', 'not_active')"/>
+            <column name="price" type="INT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-3">
+        <createTable tableName="chat">
+            <column autoIncrement="true" name="id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="car_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_message_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-4">
+        <createTable tableName="chat_user">
+            <column name="chat_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="user_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValueNumeric="0" name="unread_count" type="INT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-5">
+        <createTable tableName="generation">
+            <column autoIncrement="true" name="id" type="INT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="generation_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="model_id" type="INT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-6">
+        <createTable tableName="message">
+            <column autoIncrement="true" name="id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="chat_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="from_user_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="to_user_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="content" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_time" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="is_read" type="TINYINT(3)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-7">
+        <createTable tableName="model">
+            <column autoIncrement="true" name="id" type="INT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="model_name" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="brand_id" type="INT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-8">
+        <createTable tableName="role">
+            <column autoIncrement="true" name="id" type="INT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="role_name" type="VARCHAR(45)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-9">
+        <createTable tableName="role_user">
+            <column autoIncrement="true" name="id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="user_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role_id" type="INT UNSIGNED"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-10">
+        <createTable tableName="user">
+            <column autoIncrement="true" name="id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(35)"/>
+            <column name="email" type="VARCHAR(45)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tel" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-11">
+        <createTable tableName="verification">
+            <column autoIncrement="true" name="id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="token_value" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="expiry_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-12">
+        <createIndex indexName="fk_car_brand" tableName="car">
+            <column name="brand_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-13">
+        <createIndex indexName="fk_car_generation" tableName="car">
+            <column name="generation_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-14">
+        <createIndex indexName="fk_car_model" tableName="car">
+            <column name="model_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-15">
+        <createIndex indexName="fk_car_user_idx" tableName="car">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-16">
+        <createIndex indexName="fk_chat_ad_idx" tableName="chat">
+            <column name="car_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-17">
+        <createIndex indexName="fk_chat_last_message_id_idx" tableName="chat">
+            <column name="last_message_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-18">
+        <createIndex indexName="fk_generation_model" tableName="generation">
+            <column name="model_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-19">
+        <createIndex indexName="fk_message_chat_idx" tableName="message">
+            <column name="chat_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-20">
+        <createIndex indexName="fk_message_user_from_idx" tableName="message">
+            <column name="from_user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-21">
+        <createIndex indexName="fk_message_user_to_idx" tableName="message">
+            <column name="to_user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-22">
+        <createIndex indexName="fk_model_brand" tableName="model">
+            <column name="brand_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-23">
+        <createIndex indexName="fk_role_idx" tableName="role_user">
+            <column name="role_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-24">
+        <createIndex indexName="fk_user_id_idx" tableName="chat_user">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-25">
+        <createIndex indexName="fk_user_idx" tableName="role_user">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-26">
+        <addForeignKeyConstraint baseColumnNames="brand_id" baseTableName="car" constraintName="fk_car_brand" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="brand" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-27">
+        <addForeignKeyConstraint baseColumnNames="generation_id" baseTableName="car" constraintName="fk_car_generation" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="generation" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-28">
+        <addForeignKeyConstraint baseColumnNames="model_id" baseTableName="car" constraintName="fk_car_model" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="model" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-29">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="car" constraintName="fk_car_user" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-30">
+        <addForeignKeyConstraint baseColumnNames="car_id" baseTableName="chat" constraintName="fk_chat_car" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="car" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-31">
+        <addForeignKeyConstraint baseColumnNames="chat_id" baseTableName="chat_user" constraintName="fk_chat_id" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="chat" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-32">
+        <addForeignKeyConstraint baseColumnNames="model_id" baseTableName="generation" constraintName="fk_generation_model" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="model" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-33">
+        <addForeignKeyConstraint baseColumnNames="chat_id" baseTableName="message" constraintName="fk_message_chat" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="chat" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-34">
+        <addForeignKeyConstraint baseColumnNames="from_user_id" baseTableName="message" constraintName="fk_message_user_from" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-35">
+        <addForeignKeyConstraint baseColumnNames="to_user_id" baseTableName="message" constraintName="fk_message_user_to" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-36">
+        <addForeignKeyConstraint baseColumnNames="brand_id" baseTableName="model" constraintName="fk_model_brand" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="brand" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-37">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="role_user" constraintName="fk_role" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="role" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-38">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="role_user" constraintName="fk_user" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-39">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="chat_user" constraintName="fk_user_id" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="Vadim (generated)" id="1615541973278-40">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="verification" constraintName="fk_verification_user" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,40 @@
+.carPage {
+    display: flex;
+    white-space: nowrap;
+    justify-content: center;
+    width: fit-content;
+    margin: 10px auto 0;
+    border: 5px solid #80808047;
+    border-radius: 5px;
+    box-shadow: 0 0 34px 8px #80808047;
+    padding: 15px;
+}
+
+
+.carDescription {
+    margin-left: 16px;
+    border-left: 3px solid #80808047;
+    padding: 0 16px;
+    max-width: 25%;
+}
+
+
+@media (max-height: 520px), (max-width: 650px) {
+    .carPage {
+        flex-wrap: wrap;
+    }
+
+    .carDescription {
+        margin: 0;
+        border: none;
+        padding: 0;
+        max-width: initial;
+    }
+}
+
+.sendMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

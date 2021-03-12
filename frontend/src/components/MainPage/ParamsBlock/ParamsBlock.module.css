@@ -1,0 +1,171 @@
+.mainParamsBlock {
+    display: grid;
+    width: 90%;
+    justify-content: center;
+    grid-template-columns: 8fr 3fr 2fr;
+    grid-template-areas: "bmg yrs sbr";
+    margin: 10px auto;
+    grid-gap: 15px;
+}
+
+.mainParamsBlock > div {
+    display: grid;
+    grid-gap: 15px;
+    grid-auto-flow: column;
+}
+
+@media (max-width: 1200px) {
+    .mainParamsBlock {
+        grid-template-columns: 6fr 3fr 2fr;
+    }
+}
+
+@media (max-width: 1040px) {
+    .mainParamsBlock {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: " bmg bmg" "yrs sbr";
+    }
+}
+
+@media (max-width: 490px) {
+    .mainParamsBlock {
+        grid-template-columns: 1fr;
+        grid-template-areas: "bmg" "yrs" "sbr";
+    }
+
+    .mainParamsBlock > div {
+        grid-auto-flow: unset;
+    }
+}
+
+.brandModelGeneration {
+    grid-area: bmg;
+}
+
+.years {
+    grid-area: yrs;
+}
+
+.submitReset {
+    grid-area: sbr;
+}
+
+.yearsBlock {
+    display: flex;
+    width: 20% !important;
+}
+
+.yearsBlock > div {
+    width: 47%;
+}
+
+.yearsBlock > div:first-child {
+    margin-right: 1em;
+}
+
+.additionalParamsBlock {
+    margin: 0 auto;
+    justify-content: center;
+    display: grid;
+    white-space: nowrap;
+    grid-template-columns: 0fr 0fr 0fr 0fr 0fr 0.8fr;;
+    grid-template-areas: "e ev ev b b m " "e g  t  d c s" "e g  t  . . .";
+}
+
+@media (max-width: 1000px) {
+    .additionalParamsBlock {
+        grid-template-columns: repeat(5, 0fr);
+        grid-template-areas: "e ev ev d c " "e g   t d c" "m m   b  b s";
+    }
+
+}
+
+@media (max-width: 700px) {
+    .additionalParamsBlock {
+        grid-template-columns: auto;
+        grid-template-areas: "e ev ev" "e g t" "d c ." "m m m" "b b b" "s s s";
+    }
+}
+
+@media (max-width: 470px) {
+    .additionalParamsBlock * {
+        font-size: 12px !important;
+    }
+
+    .additionalParamsBlock {
+        grid-template-columns: repeat(2, 0fr);
+        grid-template-areas: "e g" "e t" "ev ev" "d c" "m m" "b b" "s s";
+    }
+}
+
+.engineBlock {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    margin-right: 16px;
+}
+
+.gasTransmission {
+    display: flex;
+}
+
+.mileageBodyTypeBlock {
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    margin-right: 16px;
+    white-space: nowrap;
+}
+
+.sortBlock {
+    width: 30%;
+    min-width: 240px;
+}
+
+
+.accordionWidth {
+    width: 90%;
+}
+
+.engine {
+    grid-area: e;
+}
+
+.engineVolume {
+    grid-area: ev;
+}
+
+.gas {
+    grid-area: g;
+}
+
+.transmission {
+    grid-area: t;
+}
+
+.drivetrain {
+    grid-area: d;
+}
+
+.condition {
+    grid-area: c;
+}
+
+.mileage {
+    grid-area: m;
+}
+
+.bodyType {
+    grid-area: b;
+    margin: 16px;
+}
+
+@media (max-width: 700px) {
+    .bodyType {
+        margin: 0;
+        margin-bottom: 16px;
+    }
+}
+
+.sort {
+    grid-area: s;
+}
