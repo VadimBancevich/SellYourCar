@@ -1,4 +1,6 @@
 My demo project witch runs on google compute engine - http://35.242.214.67:5000 <br>
+login - user<br>
+password - asd123<br>
 Swagger api http://35.242.214.67:8080/swagger-ui.html <br>
 <pre>
 Stack:
